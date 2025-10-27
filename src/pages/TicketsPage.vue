@@ -256,7 +256,7 @@ export default {
 };
 </script>
 
-<style scoped>
+ <style scoped>
 .min-h-screen {
   min-height: 100vh;
 }
@@ -543,4 +543,4 @@ export default {
     grid-template-columns: 1fr;
   }
 }
-</style>
+</style> 

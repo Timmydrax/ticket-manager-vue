@@ -129,7 +129,7 @@ export default {
 };
 </script>
 
-<style scoped>
+ <style scoped>
 .min-h-screen {
   min-height: 100vh;
 }
@@ -304,4 +304,4 @@ export default {
 .hover\:underline:hover {
   text-decoration: underline;
 }
-</style>
+</style> 
