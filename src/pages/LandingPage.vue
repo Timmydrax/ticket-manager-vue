@@ -5,18 +5,18 @@
       <div
         class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">HNG Ticket Manager</h1>
+        <h1 class="text-2xl font-bold text-blue-900">Ticket Manager</h1>
         <div class="flex gap-4">
           <router-link to="/auth/login">
             <button
-              class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+              class="px-4 py-2 shadow border-gray-300 rounded-md hover:bg-blue-900 hover:text-white cursor-pointer"
             >
               Login
             </button>
           </router-link>
           <router-link to="/auth/signup">
             <button
-              class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              class="px-4 py-2 bg-blue-900 cursor-pointer text-white rounded-md hover:bg-blue-900"
             >
               Get Started
             </button>
@@ -36,11 +36,11 @@
 
       <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
         <h2 class="text-5xl font-bold mb-6">Manage Your Tickets Efficiently</h2>
-        <p class="text-xl mb-8 text-white/90">
+        <p class="text-xl mb-8 text-white/90 text-balance">
           A simple, powerful ticket management system to track, organize, and
           resolve issues with ease.
         </p>
-        <div class="flex gap-4 justify-center">
+        <div class="flex gap-4 justify-center items-center">
           <router-link to="/auth/signup">
             <button
               class="px-8 py-3 bg-white text-blue-600 rounded-md font-medium hover:bg-gray-100"
@@ -50,7 +50,7 @@
           </router-link>
           <router-link to="/auth/login">
             <button
-              class="px-8 py-3 border-2 border-white text-white rounded-md font-medium hover:bg-white/10"
+              class="px-8 py-3 border border-white text-white rounded-md font-medium hover:bg-white/10"
             >
               Sign In
             </button>
@@ -107,7 +107,7 @@
     <!-- Footer -->
     <footer class="border-t border-gray-200 bg-gray-50 py-8">
       <div class="max-w-6xl mx-auto px-4 text-center text-gray-600">
-        <p>&copy; 2025 HNG Ticket Manager. All rights reserved.</p>
+        <p>&copy; 2025 Ticket Manager. All rights reserved.</p>
       </div>
     </footer>
   </div>
@@ -119,7 +119,7 @@ export default {
 };
 </script>
 
- <style scoped>
+<style scoped>
 .min-h-screen {
   min-height: 100vh;
 }
@@ -225,7 +225,7 @@ export default {
 }
 
 .text-blue-600 {
-  color: #2563eb;
+  color: #003d7f;
 }
 
 .text-gray-600 {
@@ -314,7 +314,7 @@ export default {
 }
 
 .hover\:bg-blue-700:hover {
-  background-color: #1d4ed8;
+  background-color: #003d7f;
 }
 
 .hover\:bg-gray-100:hover {
@@ -335,6 +335,11 @@ export default {
   padding-bottom: 0.75rem;
 }
 
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .border-2 {
   border-width: 2px;
 }
@@ -348,4 +353,4 @@ export default {
     grid-template-columns: 1fr;
   }
 }
-</style> 
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+  <div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
     <div class="w-full max-w-md p-8 bg-white rounded-lg border border-gray-200">
       <div class="mb-8">
         <h1 class="text-3xl font-bold mb-2">Welcome Back</h1>
@@ -15,7 +15,7 @@
             autocomplete="email"
             v-model="email"
             :class="{ 'border-red-500': errors.email }"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
           />
           <p v-if="errors.email" class="text-sm text-red-600 mt-1">
             {{ errors.email }}
@@ -30,7 +30,7 @@
             autocomplete="current-password"
             v-model="password"
             :class="{ 'border-red-500': errors.password }"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
           />
           <p v-if="errors.password" class="text-sm text-red-600 mt-1">
             {{ errors.password }}
@@ -40,13 +40,13 @@
         <button
           type="submit"
           :disabled="isLoading"
-          class="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+          class="w-full px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900 disabled:opacity-50"
         >
           {{ isLoading ? "Signing in..." : "Sign In" }}
         </button>
       </form>
 
-      <div class="mt-6 pt-6 border-t border-gray-200">
+      <div class="mt-6 pt-6 border-t border-gray-100">
         <p class="text-sm text-gray-600 mb-4">
           Demo credentials: <br />
           Email:
@@ -62,7 +62,7 @@
           Don't have an account?
           <router-link
             to="/auth/signup"
-            class="text-blue-600 hover:underline font-medium"
+            class="text-blue-900 hover:underline font-medium"
             >Sign up</router-link
           >
         </p>
@@ -129,7 +129,7 @@ export default {
 };
 </script>
 
- <style scoped>
+<style scoped>
 .min-h-screen {
   min-height: 100vh;
 }
@@ -304,4 +304,4 @@ export default {
 .hover\:underline:hover {
   text-decoration: underline;
 }
-</style> 
+</style>

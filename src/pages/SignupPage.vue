@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+  <div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
     <div class="w-full max-w-md p-8 bg-white rounded-lg border border-gray-200">
       <div class="mb-8">
         <h1 class="text-3xl font-bold mb-2">Create Account</h1>
@@ -9,7 +9,7 @@
       </div>
 
       <form @submit.prevent="handleSubmit" class="space-y-4">
-        <div>
+        <!-- <div>
           <label class="block text-sm font-medium mb-2">Full Name</label>
           <input
             type="text"
@@ -17,12 +17,12 @@
             v-model="formData.name"
             autocomplete="name"
             :class="{ 'border-red-500': errors.name }"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
           />
           <p v-if="errors.name" class="text-sm text-red-600 mt-1">
             {{ errors.name }}
           </p>
-        </div>
+        </div> -->
 
         <div>
           <label class="block text-sm font-medium mb-2">Email</label>
@@ -32,7 +32,7 @@
             v-model="formData.email"
             autocomplete="email"
             :class="{ 'border-red-500': errors.email }"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
           />
           <p v-if="errors.email" class="text-sm text-red-600 mt-1">
             {{ errors.email }}
@@ -47,7 +47,7 @@
             v-model="formData.password"
             autocomplete="new-password"
             :class="{ 'border-red-500': errors.password }"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
           />
           <p v-if="errors.password" class="text-sm text-red-600 mt-1">
             {{ errors.password }}
@@ -62,7 +62,7 @@
             autocomplete="new-password"
             v-model="formData.confirmPassword"
             :class="{ 'border-red-500': errors.confirmPassword }"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
           />
           <p v-if="errors.confirmPassword" class="text-sm text-red-600 mt-1">
             {{ errors.confirmPassword }}
@@ -72,9 +72,9 @@
         <button
           type="submit"
           :disabled="isLoading"
-          class="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+          class="w-full px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900 disabled:opacity-50"
         >
-          {{ isLoading ? "Creating account..." : "Create Account" }}
+          {{ isLoading ? "Signing Up..." : "Sign Up" }}
         </button>
       </form>
 
@@ -83,7 +83,7 @@
           Already have an account?
           <router-link
             to="/auth/login"
-            class="text-blue-600 hover:underline font-medium"
+            class="text-blue-900 hover:underline font-medium"
             >Sign in</router-link
           >
         </p>

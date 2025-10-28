@@ -1,14 +1,14 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gray-100">
     <!-- Header -->
     <header class="border-b border-gray-200 bg-white">
       <div
         class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">HNG Ticket Manager</h1>
+        <h1 class="text-2xl font-bold text-blue-900">Ticket Manager</h1>
         <router-link to="/tickets">
           <button
-            class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+            class="px-4 py-2 shadow border-gray-300 rounded-md hover:bg-blue-900 hover:text-white"
           >
             Back to Tickets
           </button>
@@ -18,7 +18,7 @@
 
     <!-- Main Content -->
     <main class="max-w-2xl mx-auto px-4 py-12">
-      <div class="bg-white p-8 rounded-lg border border-gray-200">
+      <div class="bg-white p-8 rounded-lg shadow border-gray-200">
         <h2 class="text-3xl font-bold mb-6">Edit Ticket</h2>
 
         <form @submit.prevent="handleSubmit" class="space-y-6">
@@ -29,7 +29,7 @@
               placeholder="Ticket title"
               v-model="formData.title"
               :class="{ 'border-red-500': errors.title }"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
             />
             <p v-if="errors.title" class="text-sm text-red-600 mt-1">
               {{ errors.title }}
@@ -41,7 +41,7 @@
             <textarea
               placeholder="Ticket description"
               v-model="formData.description"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
               rows="6"
             ></textarea>
           </div>
@@ -50,7 +50,7 @@
             <label class="block text-sm font-medium mb-2">Status</label>
             <select
               v-model="formData.status"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
             >
               <option value="open">Open</option>
               <option value="in_progress">In Progress</option>
@@ -64,7 +64,7 @@
           <div class="flex gap-4">
             <button
               type="submit"
-              class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              class="flex-1 px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900"
             >
               Save Changes
             </button>

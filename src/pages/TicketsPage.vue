@@ -1,14 +1,14 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gray-100">
     <!-- Header -->
     <header class="border-b border-gray-200 bg-white">
       <div
         class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">HNG Ticket Manager</h1>
+        <h1 class="text-2xl font-bold text-blue-900">Ticket Manager</h1>
         <router-link to="/dashboard">
           <button
-            class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+            class="px-4 py-2 shadow bg-gray-200 rounded-md hover:bg-blue-900 hover:text-white"
           >
             Back to Dashboard
           </button>
@@ -25,7 +25,7 @@
         </div>
         <button
           @click="showForm = !showForm"
-          class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          class="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900"
         >
           {{ showForm ? "Cancel" : "Create Ticket" }}
         </button>
@@ -34,7 +34,7 @@
       <!-- Create Ticket Form -->
       <div
         v-if="showForm"
-        class="bg-white p-6 rounded-lg border border-gray-200 mb-8"
+        class="bg-white p-6 rounded-lg shadow border-gray-200 mb-8"
       >
         <h3 class="text-xl font-semibold mb-4">Create New Ticket</h3>
         <form @submit.prevent="handleAddTicket" class="space-y-4">
@@ -45,7 +45,7 @@
               placeholder="Ticket title"
               v-model="formData.title"
               :class="{ 'border-red-500': errors.title }"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
             />
             <p v-if="errors.title" class="text-sm text-red-600 mt-1">
               {{ errors.title }}
@@ -57,7 +57,7 @@
             <textarea
               placeholder="Ticket description (optional)"
               v-model="formData.description"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
               rows="4"
             ></textarea>
           </div>
@@ -66,7 +66,7 @@
             <label class="block text-sm font-medium mb-2">Status</label>
             <select
               v-model="formData.status"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
             >
               <option value="open">Open</option>
               <option value="in_progress">In Progress</option>
@@ -79,7 +79,7 @@
 
           <button
             type="submit"
-            class="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            class="w-full px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900"
           >
             Create Ticket
           </button>
@@ -90,14 +90,14 @@
       <div class="space-y-4">
         <div
           v-if="tickets.length === 0"
-          class="bg-white p-12 rounded-lg border border-gray-200 text-center"
+          class="bg-white p-12 rounded-lg shadow border-gray-200 text-center"
         >
           <p class="text-gray-600 mb-4">
             No tickets yet. Create one to get started!
           </p>
           <button
             @click="showForm = true"
-            class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            class="w-full px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-900"
           >
             Create First Ticket
           </button>
@@ -106,7 +106,7 @@
         <div
           v-for="ticket in tickets"
           :key="ticket.id"
-          class="bg-white p-6 rounded-lg border border-gray-200"
+          class="bg-white p-6 rounded-lg shadow border-gray-200"
         >
           <div class="flex justify-between items-start mb-4">
             <div class="flex-1">
@@ -160,7 +160,7 @@
               </button>
               <button
                 @click="deleteConfirm = null"
-                class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50"
+                class="px-4 py-2 shadow bg-white border-gray-300 rounded-md hover:bg-gray-50"
               >
                 Cancel
               </button>
@@ -256,7 +256,7 @@ export default {
 };
 </script>
 
- <style scoped>
+<style scoped>
 .min-h-screen {
   min-height: 100vh;
 }
@@ -543,4 +543,4 @@ export default {
     grid-template-columns: 1fr;
   }
 }
-</style> 
+</style>
