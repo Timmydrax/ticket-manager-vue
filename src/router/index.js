@@ -5,6 +5,7 @@ import SignupPage from "../pages/SignupPage.vue";
 import DashboardPage from "../pages/DashboardPage.vue";
 import TicketsPage from "../pages/TicketsPage.vue";
 import EditTicketPage from "../pages/EditTicketPage.vue";
+import NotFound from "../pages/NotFound.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/tickets/:id",
     name: "EditTicket",
     component: EditTicketPage,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 
