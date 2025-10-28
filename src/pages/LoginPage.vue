@@ -46,17 +46,6 @@
         </button>
       </form>
 
-      <div class="mt-6 pt-6 border-t border-gray-100">
-        <p class="text-sm text-gray-600 mb-4">
-          Demo credentials: <br />
-          Email:
-          <code class="bg-gray-100 px-2 py-1 rounded">demo@example.com</code>
-          <br />
-          Password:
-          <code class="bg-gray-100 px-2 py-1 rounded">password123</code>
-        </p>
-      </div>
-
       <div class="mt-6 text-center">
         <p class="text-sm text-gray-600">
           Don't have an account?
@@ -106,9 +95,18 @@ export default {
       this.isLoading = true;
 
       setTimeout(() => {
+        const rawUser = localStorage.getItem("ticketapp_user");
+        const savedUser = rawUser ? JSON.parse(rawUser) : null;
+
+        if (!savedUser) {
+          alert("No account found. Please sign up first.");
+          this.isLoading = false;
+          return;
+        }
+
         if (
-          this.email === "demo@example.com" &&
-          this.password === "password123"
+          savedUser.email === this.email &&
+          savedUser.password === this.password
         ) {
           localStorage.setItem(
             "ticketapp_session",

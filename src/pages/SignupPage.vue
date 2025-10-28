@@ -111,10 +111,6 @@ export default {
     validateForm() {
       this.errors = {};
 
-      if (!this.formData.name) {
-        this.errors.name = "Name is required";
-      }
-
       if (!this.formData.email) {
         this.errors.email = "Email is required";
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formData.email)) {
@@ -139,16 +135,27 @@ export default {
       this.isLoading = true;
 
       setTimeout(() => {
+        const email = this.formData.email;
+        const password = this.formData.password;
+
+        // Save User to Local Storage
+        localStorage.setItem(
+          "ticketapp_user",
+          JSON.stringify({
+            email,
+            password,
+          })
+        );
+
         localStorage.setItem(
           "ticketapp_session",
           JSON.stringify({
             email: this.formData.email,
-            name: this.formData.name,
             token: "mock-token-" + Date.now(),
             createdAt: new Date().toISOString(),
           })
         );
-        this.$router.push("/dashboard");
+        this.$router.push("/auth/login");
         this.isLoading = false;
       }, 500);
     },
